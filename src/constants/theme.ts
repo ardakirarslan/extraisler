@@ -1,6 +1,6 @@
 /**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
+ * App-wide color palette. The app always renders in a bright, airy light
+ * theme regardless of device color scheme — see `useTheme`.
  */
 
 import '@/global.css';
@@ -8,23 +8,14 @@ import '@/global.css';
 import { Platform } from 'react-native';
 
 export const Colors = {
-  light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
-  },
-  dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
-  },
+  text: '#2C1810',
+  background: '#F5F1E8',
+  backgroundElement: '#F0EBE2',
+  backgroundSelected: '#E9E2D7',
+  textSecondary: '#6B5E55',
 } as const;
 
-export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
+export type ThemeColor = keyof typeof Colors;
 
 export const Fonts = Platform.select({
   ios: {
@@ -63,3 +54,24 @@ export const Spacing = {
 
 export const BottomTabInset = Platform.select({ ios: 50, android: 80 }) ?? 0;
 export const MaxContentWidth = 800;
+
+export const AccentColor = '#1B4332';
+/** Distinct from AccentColor — reserved for primary creation CTAs (e.g. "Yeni İlan Oluştur"). */
+export const CtaColor = '#D98E4A';
+
+export const CardShadow = {
+  shadowColor: '#2C1810',
+  shadowOpacity: 0.08,
+  shadowRadius: 16,
+  shadowOffset: { width: 0, height: 6 },
+  elevation: 2,
+} as const;
+
+export const Radius = {
+  card: 20,
+  chip: 999,
+  button: 16,
+} as const;
+
+/** Light tint of AccentColor — used for badge/chip/button backgrounds that pair with AccentColor text. */
+export const AccentTint = 'rgba(27, 67, 50, 0.1)';

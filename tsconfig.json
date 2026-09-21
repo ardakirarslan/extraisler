@@ -16,5 +16,13 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
+  ],
+  "exclude": [
+    "supabase/functions/**",
+    "job-detail-page/**",
+    "profile/**",
+    "home/**",
+    "settings/**",
+    "job-listings/**"
   ]
 }
